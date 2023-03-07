@@ -1,0 +1,26 @@
+version: '3'
+services:
+  precheck-node:
+    image: adolfintel/speedtest:latest
+    container_name: precheck
+    restart: always
+    environment:
+      - TITLE=Georgia Cyber Range Precheck
+    volumes:
+      - /var/www/html:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - precheck-net
+
+  websocket-node:
+    image: jmalloc/echo-server:latest
+    container_name: websocket
+    restart: always
+    ports:
+      - 443:8080
+    networks:
+      - precheck-net
+
+networks:
+  precheck-net:
