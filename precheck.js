@@ -95,10 +95,10 @@ function testAll() {
                     }
                 )
                 if (isHtml5Supported && isWebSocketSupported && isBrowserSupported) {
-                    if (ulddata < 1.00 && dlddata < 1.00) {
+                    if (ulddata < 4.00 && dlddata < 4.00) {
                         testCompleteElement.style.color = '#ff6418'
                         testCompleteElement.textContent = 'Your Browser Meets the Requirements, but your Internet Speed is Slow';;
-                    } else if (ulddata < 10.00 && dlddata < 10.00) {
+                    } else if (ulddata < 10.00 && dlddata < 6.00) {
                         testCompleteElement.style.color = '#00ff0a';
                         testCompleteElement.textContent = 'Your Browser Meets the Requirements, and your Internet Speed is Good';
                     } else {
