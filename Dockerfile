@@ -6,6 +6,7 @@ FROM php:7.4-apache
 
 # Install extensions
 RUN apt-get update && apt-get install -y \
+    git \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
@@ -35,6 +36,7 @@ COPY speedtest/docker/servers.json /servers.json
 
 COPY speedtest/docker/*.php /speedtest/
 COPY *.php /speedtest/
+
 COPY speedtest/docker/entrypoint.sh /
 
 # Prepare environment variabiles defaults
