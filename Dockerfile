@@ -29,7 +29,7 @@ COPY speedtest/results/*.ttf /speedtest/results/
 COPY speedtest/*.js /speedtest/
 COPY *.js /speedtest/
 COPY *.css /speedtest/
-COPY favicon.ico /speedtest/
+COPY speedtest/favicon.ico /speedtest/
 
 COPY speedtest/docker/servers.json /servers.json
 
@@ -39,7 +39,7 @@ COPY speedtest/docker/entrypoint.sh /
 
 # Prepare environment variabiles defaults
 
-ENV TITLE=Georgia Cyber Range PreCheck
+ENV TITLE=LibreSpeed
 ENV MODE=standalone
 ENV PASSWORD=password
 ENV TELEMETRY=false
