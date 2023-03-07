@@ -17,7 +17,7 @@ latest:
     echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
     c="precheck"
     echo "Building container: $c:latest"
-    docker build --no-cache -t registry.gitlab.com/gacybercenter/open/precheck/$c:latest $c/.
+    docker build --no-cache -t registry.gitlab.com/gacybercenter/open/precheck/$c:latest .
     echo "Deploying Container Image: $c:latest"
     docker push registry.gitlab.com/gacybercenter/open/precheck/$c:latest
 
@@ -35,7 +35,7 @@ build:
     echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER $CI_REGISTRY --password-stdin
     c="precheck"
     echo "Building container: $c:${CI_COMMIT_SHORT_SHA}"
-    docker build --no-cache -t registry.gitlab.com/gacybercenter/open/precheck/$c:${CI_COMMIT_SHORT_SHA} $c/.
+    docker build --no-cache -t registry.gitlab.com/gacybercenter/open/precheck/$c:${CI_COMMIT_SHORT_SHA} .
     echo "Deploying Container Image: $c:${CI_COMMIT_SHORT_SHA}"
     docker push registry.gitlab.com/gacybercenter/open/precheck/$c:${CI_COMMIT_SHORT_SHA}
 
