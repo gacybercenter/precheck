@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql pdo_pgsql pgsql
 
 # Prepare files and folders
-
+RUN ls -al
+RUN ls -al speedtest
 RUN mkdir -p /speedtest/
 
 # Copy sources
