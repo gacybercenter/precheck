@@ -35,7 +35,33 @@ The `Dockerfile` is provided to build the image for PreCheck with LibreSpeed **(
 - **PreCheck w/ LibreSpeed Container**
 - **Echo WebSocket Container**
 
-The overall design is for standalone use only.
+The overall design is for standalone use only, and the build steps below are
+to address building an image with multiple contexts.
+
+. Install Required Packages
+[source,shell]
+----
+sudo apt update && sudo apt install docker.io docker-compose containerd
+----
+
+. Clone the repository
+[source,shell]
+----
+git clone https://gitlab.com/gacybercenter/open/precheck.git
+cd precheck && git submodule update --init --recursive
+----
+
+. Build the Image
+[source,shell]
+----
+docker-compose build
+----
+
+. Run the Services
+[source,shell]
+----
+docker-compose up -d
+----
 
 == Notice
 This project is not affiliated with LibreSpeed or the LibreSpeed Speedtest project. This project is a derivative work of the LibreSpeed Speedtest project to enable additional checks and is not meant as a replacement for the original project.

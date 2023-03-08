@@ -17,8 +17,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql pdo_pgsql pgsql
 
 # Prepare files and folders
-RUN ls -al
-RUN ls -al speedtest
 RUN mkdir -p /speedtest/
 
 # Copy sources
@@ -39,9 +37,9 @@ COPY speedtest/docker/*.php /speedtest/
 COPY *.php /speedtest/
 
 COPY speedtest/docker/entrypoint.sh /
+RUN sed -i 's/cp \/speedtest\/\*.js \/var\/www\/html\//&\ncp \/speedtest\/\*.css \/var\/www\/html\//' /entrypoint.sh
 
 # Prepare environment variabiles defaults
-
 ENV TITLE=LibreSpeed
 ENV MODE=standalone
 ENV PASSWORD=password

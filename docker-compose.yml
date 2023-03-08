@@ -1,7 +1,12 @@
 version: '3'
 services:
-  precheck-node:
-    image: adolfintel/speedtest:latest
+  node:
+    build:
+      context: .
+      x-bake:
+        contexts:
+          context1: ./speedtest/
+
     container_name: precheck
     restart: always
     environment:
