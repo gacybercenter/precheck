@@ -22,22 +22,22 @@ RUN mkdir -p /speedtest/
 
 # Copy sources
 
-COPY speedtest/backend/ /speedtest/backend
+COPY --from=speedtest speedtest/backend/ /speedtest/backend
 
-COPY speedtest/results/*.php /speedtest/results/
-COPY speedtest/results/*.ttf /speedtest/results/
+COPY --from=speedtest speedtest/results/*.php /speedtest/results/
+COPY --from=speedtest speedtest/results/*.ttf /speedtest/results/
 
-COPY speedtest/*.js /speedtest/
+COPY --from=speedtest speedtest/*.js /speedtest/
 COPY *.js /speedtest/
 COPY *.css /speedtest/
-COPY speedtest/favicon.ico /speedtest/
+COPY --from=speedtest speedtest/favicon.ico /speedtest/
 
-COPY speedtest/docker/servers.json /servers.json
+COPY --from=speedtest speedtest/docker/servers.json /servers.json
 
-COPY speedtest/docker/*.php /speedtest/
+COPY --from=speedtest speedtest/docker/*.php /speedtest/
 COPY *.php /speedtest/
 
-COPY speedtest/docker/entrypoint.sh /
+COPY --from=speedtest speedtest/docker/entrypoint.sh /
 
 # Prepare environment variabiles defaults
 
