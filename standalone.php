@@ -260,7 +260,7 @@
             </div>
         </div>
         <!-- <a href="https://github.com/librespeed/speedtest">Source code</a> -->
-<p>Powered by <a href="https://gitlab.com/gacybercenter/open/precheck"><b>Gergia Cyber Range System PreCheck</b></a><br>
+<p>Powered by <a href="https://gitlab.com/gacybercenter/open/precheck"><b>Georgia Cyber Range System PreCheck</b></a><br>
             and <a href="https://github.com/librespeed/speedtest"><b>LibreSpeed Speedtest</b></a></p>    </div>
     <div id="privacyPolicy" style="display:none">
         <h2>Privacy Policy</h2>
