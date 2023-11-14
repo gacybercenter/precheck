@@ -30,7 +30,7 @@ function testAll() {
             try {
                 var ws;
                 var url = window.location.hostname;
-                ws = new WebSocket('ws://' + url + ':443');
+                ws = new WebSocket('ws://' + url + ':8080');
                 ws.onopen = function () {
                     websocketElement.textContent = 'supported';
                     ws.close();

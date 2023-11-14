@@ -21,8 +21,8 @@ https://github.com/jmalloc/echo-server
 The System PreCheck project provides the following overall features:
 
 - HTML5 Browser Detection
-- WebSocket Functionality Check
-- TCP Port Checks (80, 443)
+- WebSocket Functionality Check (port 8080)
+- TCP Port Checks (80) _Does not include a SSL Proxy_
 - Speedtest (LibreSpeed)
 
 The overall goal of this project is to provide a docker implementation providing an all-in-one solution for a system prechecks for remote based training that leverages Apache Guacamole for remote access.
