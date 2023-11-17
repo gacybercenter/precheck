@@ -54,7 +54,7 @@ cd precheck && git submodule update --init --recursive
 . Build the Image
 [source,shell]
 ----
-docker-compose build
+docker build . --tag precheck:latest
 ----
 
 . Run the Services

@@ -1,12 +1,7 @@
 version: '3'
 services:
   node:
-    build:
-      context: .
-      x-bake:
-        contexts:
-          context1: ./speedtest/
-
+    image: precheck:latest
     container_name: precheck
     restart: always
     environment:
@@ -23,7 +18,7 @@ services:
     container_name: websocket
     restart: always
     ports:
-      - 443:8080
+      - 8080:8080
     networks:
       - precheck-net
 
